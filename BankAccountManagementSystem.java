@@ -29,4 +29,19 @@ public class BankAccountManagementSystem {
             System.out.println("Account does not exist");
         }
     }
+
+    public void withdraw(String accountNumber, double amount) {
+        if(accounts.containsKey(accountNumber)) {
+            double balance = accounts.get(accountNumber);
+            if(balance < amount) {
+                System.out.println("Insufficient Funds");
+            } else {
+                balance -= amount;
+                accounts.put(accountNumber, balance);
+                System.out.println("Withdrawal successful");
+            }
+        } else {
+            System.out.println("Account does not exist");
+        }
+    }
 }
