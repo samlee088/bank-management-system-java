@@ -44,4 +44,15 @@ public class BankAccountManagementSystem {
             System.out.println("Account does not exist");
         }
     }
+
+    public void checkBalance(String accountNumber) {
+        if(accounts.containsKey(accountNumber)) {
+            double balance = accounts.get(accountNumber);
+            System.out.println("Account Balance: " + balance);
+        } else {
+            System.out.println("Account does not exist");
+        }
+    }
+
+    
 }
